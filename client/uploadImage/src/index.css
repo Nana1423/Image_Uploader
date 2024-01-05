@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .loading-animation {
+        @keyframes loading {
+            from {
+              left: 0;
+            }
+          
+            to {
+              right: 0;
+            }
+          }
+    }
+  }
