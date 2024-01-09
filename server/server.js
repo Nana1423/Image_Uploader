@@ -21,7 +21,7 @@ const upload = multer({
 })
 
 app.use('/images', express.static('upload'));
-app.post("/upload", upload.single('profile'), (req, res) => {
+app.post("/upload", upload.single('image'), (req, res) => {
 
     res.json({
         success: 1,

@@ -24,7 +24,39 @@ function App() {
 		// API POST
 		const formData = new FormData();
 		const file = event.target.files[0];
-		formData.append('profile', file);
+		formData.append('image', file);
+		setIsLoading(true);
+		axios
+			.post('http://localhost:3000/upload', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			})
+			.then((response) => {
+				setIsLoading(false);
+				setIsUploaded(true);
+				setImage(URL.createObjectURL(file));
+				setImageAPI(response.data.profile_url);
+			})
+			.catch((error) => {
+				setIsLoading(false);
+				console.error('Error:', error);
+			});
+	}
+
+	async function handleOnDrop(event: React.DragEvent<HTMLLabelElement>) {
+		event.preventDefault();
+		if (!event.dataTransfer.files) {
+			alert(
+				'ERROR UPLOADING YOUR IMAGE. \nPlease upload one image in format jpeg or png',
+			);
+			return;
+		}
+		// API POST
+		const file = event.dataTransfer.files[0];
+		console.log(file)
+		const formData = new FormData();
+		formData.append('image', file);
 		setIsLoading(true);
 		axios
 			.post('http://localhost:3000/upload', formData, {
@@ -52,7 +84,7 @@ function App() {
 		<>
 			<div className='w-full h-screen flex justify-center items-center bg-slate-500'>
 				{!isLoading && !isUploaded ? (
-					<ImageUploader handleImageSubmit={handleImageSubmit} />
+					<ImageUploader handleImageSubmit={handleImageSubmit} handleOnDrop={handleOnDrop} />
 				) : (
 					''
 				)}
