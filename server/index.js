@@ -58,6 +58,7 @@ app.get("/api", (req, res) => {
 })
 
 app.use(errHandler);
-app.listen(3000, () => {
-    console.log("API running in port 3000");
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+    console.log("API running in http://localhost:3000");
 })
