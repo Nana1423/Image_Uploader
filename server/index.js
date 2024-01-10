@@ -7,27 +7,27 @@ const cors = require('cors')
 // Whitelist API
 // app.use(cors());
 
-// // storage engine 
+// storage engine 
 
-// const storage = multer.diskStorage({
-//     destination: './upload',
-//     filename: (req, file, cb) => {
-//         return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-//     }
-// })
+const storage = multer.diskStorage({
+    destination: './upload',
+    filename: (req, file, cb) => {
+        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    }
+})
 
-// const upload = multer({
-//     storage: storage,
-// })
+const upload = multer({
+    storage: storage,
+})
 
-// app.use('/images', express.static('upload'));
-// app.post("/upload", upload.single('image'), (req, res) => {
+app.use('/images', express.static('upload'));
+app.post("/upload", upload.single('image'), (req, res) => {
 
-//     res.json({
-//         success: 1,
-//         profile_url: `http://localhost:3000/images/${req.file.filename}`
-//     })
-// })
+    res.json({
+        success: 1,
+        profile_url: `http://localhost:3000/images/${req.file.filename}`
+    })
+})
 
 // function errHandler(err, req, res, next) {
 //     if (err instanceof multer.MulterError) {
