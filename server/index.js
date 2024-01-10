@@ -5,7 +5,7 @@ const path = require("path");
 const cors = require('cors')
 
 // Whitelist API
-// app.use(cors());
+app.use(cors());
 
 // storage engine 
 
@@ -16,20 +16,20 @@ const cors = require('cors')
 //     }
 // })
 
-const upload = multer({
-    storage: storage,
-})
+// const upload = multer({
+//     storage: storage,
+// })
 
-app.use('/images', express.static('upload'));
-app.post("/upload", upload.single('image'), (req, res) => {
+// app.use('/images', express.static('upload'));
+// app.post("/upload", upload.single('image'), (req, res) => {
 
-    res.send("Send images to this endpoint via post");
+//     res.send("Send images to this endpoint via post");
 
-    res.json({
-        success: 1,
-        profile_url: `http://localhost:3000/images/${req.file.filename}`
-    })
-})
+//     res.json({
+//         success: 1,
+//         profile_url: `http://localhost:3000/images/${req.file.filename}`
+//     })
+// })
 
 // function errHandler(err, req, res, next) {
 //     if (err instanceof multer.MulterError) {
