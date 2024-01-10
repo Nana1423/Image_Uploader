@@ -2,7 +2,7 @@
 export default function Loading() {
 	return (
 		<>
-			<div className='flex bg-white flex-col px-8 py-9 gap-5 max-w-[400px] w-full h-[144px] rounded-xl shadow-md'>
+			<div className='flex bg-white flex-col px-8 py-9 gap-5 max-w-[400px] w-full h-[144px] rounded-xl shadow-md animation-slide'>
 				<h1 className='font-poppins text-[18px] font-medium text-[#4F4F4F]'>
 					Uploading...
 				</h1>

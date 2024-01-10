@@ -9,7 +9,7 @@ export default function Uploaded({ localURL, imageAPIURL, handleReset }: { local
 
     return(
         <>
-            <div className='flex bg-white flex-col justify-center items-center max-w-[400px] w-full h-[455px] px-8 py-9 rounded-xl shadow-md'>
+            <div className='flex bg-white flex-col justify-center items-center max-w-[400px] w-full h-[455px] px-8 py-9 rounded-xl shadow-md animation-slide'>
 				<div className='h-fit rounded-full flex justify-center bg-[#219653]'>
 					<DoneIcon className=' text-white' />
 				</div>

@@ -13,3 +13,34 @@
 .animation-loading {
 	animation: loading 1.5s infinite;
 }
+
+@keyframes verticalAnimation {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animation-vertical {
+    animation: verticalAnimation 0.6s ease-in-out;
+}
+
+@keyframes slideAnimation {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.animation-slide {
+    animation: slideAnimation 0.6s ease-in;
+} 
