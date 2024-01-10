@@ -9,12 +9,12 @@ const cors = require('cors')
 
 // storage engine 
 
-const storage = multer.diskStorage({
-    destination: './upload',
-    filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: './upload',
+//     filename: (req, file, cb) => {
+//         return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+//     }
+// })
 
 const upload = multer({
     storage: storage,
@@ -22,6 +22,8 @@ const upload = multer({
 
 app.use('/images', express.static('upload'));
 app.post("/upload", upload.single('image'), (req, res) => {
+
+    res.send("Send images to this endpoint via post");
 
     res.json({
         success: 1,
