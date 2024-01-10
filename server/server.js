@@ -20,6 +20,10 @@ const upload = multer({
     storage: storage,
 })
 
+app.get('/', (req, res) => {
+    res.send("Server Running...")
+})
+
 app.use('/images', express.static('upload'));
 app.post("/upload", upload.single('image'), (req, res) => {
 
