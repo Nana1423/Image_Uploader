@@ -7,13 +7,12 @@ import Loading from '../components/Loading';
 import UploadImage from '../components/uploadImage';
 
 export default function Home() {
-
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [isUploaded, setIsUploaded] = useState<boolean>(false);
 	const [image, setImage] = useState<string | null>(null);
 	const [imageAPI, setImageAPI] = useState<string | null>(null);
 
-	const API_URL = "https://image-uploader-api-sigma.vercel.app/"
+	const API_URL = 'https://image-uploader-api-sigma.vercel.app';
 
 	async function handleImageSubmit(event: ChangeEvent<HTMLInputElement>) {
 		event.preventDefault();
@@ -57,7 +56,7 @@ export default function Home() {
 		}
 		// API POST
 		const file = event.dataTransfer.files[0];
-		console.log(file)
+		console.log(file);
 		const formData = new FormData();
 		formData.append('image', file);
 		setIsLoading(true);
@@ -80,14 +79,17 @@ export default function Home() {
 	}
 
 	const handleReset = () => {
-		setIsUploaded(false)
-	}
+		setIsUploaded(false);
+	};
 
 	return (
 		<>
-			<div className='w-full h-screen flex justify-center items-center bg-slate-500'>
+			<div className='w-full h-screen flex justify-center items-center bg-slate-500 px-2'>
 				{!isLoading && !isUploaded ? (
-					<UploadImage handleImageSubmit={handleImageSubmit} handleOnDrop={handleOnDrop} />
+					<UploadImage
+						handleImageSubmit={handleImageSubmit}
+						handleOnDrop={handleOnDrop}
+					/>
 				) : (
 					''
 				)}

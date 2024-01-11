@@ -22,7 +22,7 @@ export default function uploadImage({
 
 	return (
 		<>
-			<div className='h-full bg-white font-poppins font-medium flex flex-col justify-center items-center max-h-[469px] p-8 w-full max-w-[402px] rounded-xl shadow-md animation-vertical'>
+			<div className='h-full text-cente bg-white font-poppins font-medium flex flex-col justify-center items-center max-h-[469px] p-2 sm:p-8 w-full max-w-[402px] rounded-xl shadow-md animation-vertical'>
 				<h1 className='text-[18px] pb-[16px]  text-[#4F4F4F]'>
 					Upload your image
 				</h1>
