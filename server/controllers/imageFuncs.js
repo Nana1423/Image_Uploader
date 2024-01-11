@@ -20,7 +20,7 @@ const handleUpload = async (req, res) => {
     });
 
     // Send OK response and confirmation data
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT_CLIENT || 5173;
     const str = `data:${newImg.image.contentType};base64,${newImg.image.data}`;
     const url = process.env.SERVER || `http://localhost:${port}/${newImg._id}`;
     res.status(201).send({ imageData: str, url: url });

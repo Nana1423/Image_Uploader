@@ -1,8 +1,7 @@
-//import DoneIcon from '@mui/icons-material/Done';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { FormEventHandler, useState } from 'react';
 
-export default function imageUploader({
+export default function uploadImage({
 	handleImageSubmit,
 	handleOnDrop,
 }: {
