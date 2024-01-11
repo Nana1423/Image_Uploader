@@ -13,8 +13,7 @@ export default function Home() {
 	const [image, setImage] = useState<string | null>(null);
 	const [imageAPI, setImageAPI] = useState<string | null>(null);
 
-	const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3000"
-	const CLIENT_URL = process.env.REACT_APP_CLIENT_URL || "http://localhost:5173"
+	const API_URL = "https://image-uploader-api-sigma.vercel.app/"
 
 	async function handleImageSubmit(event: ChangeEvent<HTMLInputElement>) {
 		event.preventDefault();
@@ -31,7 +30,7 @@ export default function Home() {
 		formData.append('image', file);
 		setIsLoading(true);
 		axios
-			.post('http://localhost:3000/upload', formData, {
+			.post(`${API_URL}/upload`, formData, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 				},
@@ -63,7 +62,7 @@ export default function Home() {
 		formData.append('image', file);
 		setIsLoading(true);
 		axios
-			.post('http://localhost:3000/upload', formData, {
+			.post(`${API_URL}/upload`, formData, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 				},
