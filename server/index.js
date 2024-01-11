@@ -1,13 +1,17 @@
 const express = require('express');
+const cors = require('cors');
+const bodyParser = require("body-parser");
+const connectDB = require("./connection");
+const dotenv = require("dotenv");
+
 const app = express();
-const path = require("path");
-const cors = require('cors')
-const multer = require("multer");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Loads env variables
-const dotenv = require("dotenv");
 dotenv.config();
 
+// Routes
 const imageRoutes = require("./routes/imageOps")
 
 // Whitelist API
@@ -16,7 +20,12 @@ app.use(cors());
 // Routes
 app.use("/", imageRoutes);
 
-const port = process.env.PORT || 4000
+// Running Server
+const port = process.env.PORT || 3000
 app.listen(port, () => {
-    console.log(`Listen in port http://localhost:${port}`)
+    connectDB(process.env.MONGO_URL)
+      .then(() =>
+        console.log(`server is running at http://localhost:${port}\nDB connected`)
+      )
+      .catch((err) => console.error(err));
   });
