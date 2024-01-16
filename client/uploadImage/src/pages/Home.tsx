@@ -26,7 +26,7 @@ export default function Home() {
 		// API POST
 		const formData = new FormData();
 		const file = event.target.files[0];
-		formData.append('image', file);
+		formData.append('img', file);
 		setIsLoading(true);
 		axios
 			.post(`${API_URL}/upload`, formData, {
