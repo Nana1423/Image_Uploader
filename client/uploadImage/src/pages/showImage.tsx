@@ -10,7 +10,7 @@ export default function showImage() {
 		(async () => {
 			try {
 				const response = await axios.get(
-					`http://localhost:3000/${id}`,
+					`https://image-uploader-sgit.onrender.com/${id}`,
 				);
 				if (response.status === 200) {
 					setImg(response.data);
@@ -19,7 +19,7 @@ export default function showImage() {
 				console.error(e);
 			}
 		})();
-	}, [id]);
+	}, []);
 
 	return (
 		<>
