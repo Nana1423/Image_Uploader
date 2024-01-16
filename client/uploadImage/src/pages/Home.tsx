@@ -12,7 +12,7 @@ export default function Home() {
 	const [image, setImage] = useState<string | null>(null);
 	const [imageAPI, setImageAPI] = useState<string | null>(null);
 
-	const API_URL = 'https://image-uploader-api-sigma.vercel.app';
+	const API_URL = 'https://image-uploader-sgit.onrender.com';
 
 	async function handleImageSubmit(event: ChangeEvent<HTMLInputElement>) {
 		event.preventDefault();
