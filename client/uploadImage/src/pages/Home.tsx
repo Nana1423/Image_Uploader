@@ -84,7 +84,7 @@ export default function Home() {
 
 	return (
 		<>
-			<div className='w-full h-screen flex justify-center items-center bg-slate-500 px-2'>
+			<div className='w-full h-svh flex justify-center items-center bg-slate-500 px-2'>
 				{!isLoading && !isUploaded ? (
 					<UploadImage
 						handleImageSubmit={handleImageSubmit}
