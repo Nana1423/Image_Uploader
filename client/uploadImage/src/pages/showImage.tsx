@@ -19,7 +19,7 @@ export default function showImage() {
 				console.error(e);
 			}
 		})();
-	}, []);
+	}, [id]);
 
 	return (
 		<>
