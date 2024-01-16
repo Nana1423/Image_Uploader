@@ -13,7 +13,7 @@ export default function Uploaded({
 	const [id, setId] = useState<string | null>(null);
 
 	const handleCopyToClipboard = () => {
-		navigator.clipboard.writeText('https://image-uploader-lyart.vercel.app/image/' + id);
+		navigator.clipboard.writeText('https://image-uploader-mern.netlify.app/image/' + id);
 	};
 
 	useEffect(() => {
@@ -37,7 +37,7 @@ export default function Uploaded({
 				</div>
 				<div className='flex justify-between items-center w-full max-w-[338px] p-[2px] pl-2 h-[36px] bg-[#F6F8FB] border border-[#E0E0E0] rounded-lg font-poppins font-medium'>
 					<p className='text-[8px] text-[#4F4F4F] pr-4 truncate '>
-						{'https://image-uploader-lyart.vercel.app/image/' + id}
+						{'https://image-uploader-mern.netlify.app/image/' + id}
 					</p>
 					<button
 						onClick={handleCopyToClipboard}
